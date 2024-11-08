@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailor's Measurement App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Measurement Recording App</h1>
+        <div class="garment-selection">
+            <button onclick="selectGarment('tshirt')">T-Shirt</button>
+            <button onclick="selectGarment('shirt')">Shirt</button>
+            <button onclick="selectGarment('trousers')">Trousers</button>
+        </div>
+        <h2 id="garment-name">Select a Garment</h2>
+
+        <ul id="measurement-list"></ul>
+
+        <div class="controls">
+            <button onclick="startRecording()">Start Recording</button>
+            <button onclick="stopRecording()">Print</button>
+        </div>
+
+        <div id="status-message" class="status-message"></div>
+
+        <table id="output-table">
+            <thead>
+                <tr>
+                    <th>Measurement</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

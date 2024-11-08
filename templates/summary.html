@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Measurement Summary</title>
+</head>
+<body>
+    <h1>Measurement Summary</h1>
+    <table border="1">
+        <tr><th>Measurement</th><th>Value</th></tr>
+        {% for measurement, value in measurements.items() %}
+        <tr><td>{{ measurement }}</td><td>{{ value }}</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
